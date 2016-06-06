@@ -1,17 +1,18 @@
-var util = require('util');
-var EventEmitter = require('events').EventEmitter;
+const EventEmitter = require('events').EventEmitter;
 
-var Door = function()
+class Door extends EventEmitter
 {
-    var self = this;
-    self.ring = function(){
-        setTimeout(function() {
-            self.emit('open');
+    constructor(){
+        super();
+    }
+    ring(){
+        setTimeout(() => {
+            this.emit('open');
         }, 100);
     };
-};
-util.inherits(Door, EventEmitter);
+}
 
 module.exports = {
     createDoor :  function () { return new Door(); }
+    /*,Door: Door*/
 };

@@ -20,4 +20,4 @@ function privateHandleError(err, callback) {
     if (callback) callback(err);
 }
 
-module.exports = {file : publicFile}
+module.exports = {file : publicFile};

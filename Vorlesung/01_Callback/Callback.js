@@ -1,7 +1,3 @@
-/*function myFunc(a, b, fn) {
-    fn(a + b);
-}*/
-
 function myFunc(a, b, fn) {
     setTimeout(function(){
         fn(a + b);
@@ -9,6 +5,5 @@ function myFunc(a, b, fn) {
 }
 
 
-
 myFunc(2, 4, console.log);
-myFunc(10, 3,  console.error )
+myFunc(10, 3,  console.error );

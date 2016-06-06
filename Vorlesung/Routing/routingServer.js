@@ -6,13 +6,13 @@ var handler = function (req, res) {
   //  res.writeHead(200, {'Content-Type': 'text/plain'});
 
     if(req.url == "/"){
-        console.log("readFile")
+        console.log("readFile");
         res.writeHead(200, {'Content-Type': 'text/html'});
         var stream = fs.createReadStream("./ToSend.html" );
         stream.pipe(res);
     }
     else if(req.url == "/readFile"){
-        console.log("readFile")
+        console.log("readFile");
         fs.readFile("./ToSend.html", function(err, cont){
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.end(cont);
