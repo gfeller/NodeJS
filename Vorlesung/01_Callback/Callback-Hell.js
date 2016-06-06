@@ -33,7 +33,7 @@ function send(text, fn) {
 }
 
 var path = "file.txt";
-//Idee: Überprüfen ob File vorhanden ist, falls ja => zurückgeben ansonsten anlegen, lesen zsenden.
+//Idee: Überprüfen ob File vorhanden ist, falls ja => zurückgeben ansonsten anlegen, lesen zsenden.k
 exists(path, (exists) =>
     {
        if(exists){

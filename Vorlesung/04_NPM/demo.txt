@@ -1,0 +1,18 @@
+cas-fee-demo:
+   fancy code zeigen => möchten wir teilen!
+   npm init
+   npm publish
+   Anzeigen auf dem web: https://www.npmjs.com/package/cas-fee-demo :-)
+Wechseln nach cas-fee-demo-user
+    npm init
+    npm install cas-fee-demo --save
+    package.json zeigen
+    einbinden:
+        var demo = require("cas-fee-demo");
+        console.log(demo.calc("5*6*7*2"));
+cas-fee-demo:
+    npm unpublish --force
+
+
+
+
