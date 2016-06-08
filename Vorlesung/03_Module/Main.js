@@ -24,18 +24,3 @@ console.log(counter4.get());
 console.log(counter4.count());
 console.log(counter4.count());
 console.log(counter4.count());
-
-
-console.log("-----------------------");
-var counter5 = require("./counter3-ES6")();
-console.log(counter5.get());
-console.log(counter5.count());
-console.log(counter5.count());
-console.log(counter5.count());
-
-console.log("-----------------------");
-var counter6 = require("./counter3-ES6")(-10);
-console.log(counter6.get());
-console.log(counter6.count());
-console.log(counter6.count());
-console.log(counter6.count());

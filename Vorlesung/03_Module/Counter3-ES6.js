@@ -12,8 +12,8 @@ class Counter{
     }
 }
 
-module.exports = (...args) => new Counter(...args);
-module.exports.Counter = Counter;
+module.exports = (...args) => new Counter(...args); /*Nur eine Factory exportieren*/
+module.exports.Counter = Counter; /*Ganze Klasse exportieren*/
 
 
 

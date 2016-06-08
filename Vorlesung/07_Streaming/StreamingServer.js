@@ -4,7 +4,7 @@ var url = require('url');
 
 var handler = function (req, res) {
     if(req.url == "/"){
-        console.log("readFile")
+        console.log("readFile");
         res.writeHead(200, {'Content-Type': 'video'});
         var stream = fs.createReadStream("./Wildlife.wmv" );
         stream.pipe(res);

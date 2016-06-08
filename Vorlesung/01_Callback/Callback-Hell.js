@@ -8,7 +8,6 @@ function exists(path, fn) {
 
 
 function write(path, newText, fn) {
-
     var ok = Math.random() > 0.5;
     if(ok)
     {
@@ -33,7 +32,7 @@ function send(text, fn) {
 }
 
 var path = "file.txt";
-//Idee: Überprüfen ob File vorhanden ist, falls ja => zurückgeben ansonsten anlegen, lesen zsenden.k
+//Idee: Überprüfen ob File vorhanden ist, falls ja => zurückgeben ansonsten anlegen danach den Inhalt zurücksenden
 exists(path, (exists) =>
     {
        if(exists){
