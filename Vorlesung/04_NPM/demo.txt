@@ -2,7 +2,7 @@ fancy-calc-demo:
    fancy code zeigen => möchten wir teilen!
    npm init
    npm publish
-   Anzeigen auf dem web: https://www.npmjs.com/package/cas-fee-demo :-)
+   Anzeigen auf dem web: https://www.npmjs.com/package/fancy-calc-demo :-)
 Wechseln nach fancy-calc-demo-user
     npm init
     npm install cas-fee-demo --save
