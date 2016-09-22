@@ -8,9 +8,9 @@ Wechseln nach fancy-calc-demo-user
     npm install cas-fee-demo --save
     package.json zeigen
     einbinden:
-        var demo = require("cas-fee-demo");
+        var demo = require("fancy-calc-demo");
         console.log(demo.calc("5*6*7*2"));
-cas-fee-demo:
+fancy-calc-demo:
     npm unpublish --force
 
 
