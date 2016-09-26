@@ -1,4 +1,4 @@
-function myFunc(a, b, fn) {
+function myFunc(a, b) {
     return new Promise(function (resolve, reject) {
         if( typeof a != 'number' )
         {
@@ -18,5 +18,8 @@ function myFunc(a, b, fn) {
 console.log("start");
 myFunc(2, 4).then(console.log);
 myFunc(10, 3).then(console.log);
-myFunc("a", "b").catch(console.log);
+
+myFunc("a", "b")
+    .then(console.log)
+    .catch(console.error);
 console.log("ende");
