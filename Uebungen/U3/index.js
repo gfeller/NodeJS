@@ -1,11 +1,11 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+const http = require('http');
+const fs = require('fs');
+const url = require('url');
 
-var number = require('../U1/numbers.js');
-var file = require('../U2/file.js');
+const number = require('../U1/numbers.js');
+const file = require('../U2/file.js');
 
-var handler = function (req, res) {
+const handler = function (req, res) {
 
     if(req.url == "/sendFile"){
         res.writeHead(200, {'Content-Type': 'text/html'});
@@ -14,8 +14,9 @@ var handler = function (req, res) {
     }
     else if(req.url.indexOf("/number") == 0){
         var queryObject = url.parse(req.url,true).query;
-        number(Number(queryObject["min"]), Number(queryObject["max"]));
-        res.end("OK");
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+        number(Number(queryObject["min"]), Number(queryObject["max"]), (x) => res.write(x+"\n"));
+        res.end();
     }
     else if(req.url == "/file"){
         file.file("test.txt", "random text", function(err, content){
@@ -28,8 +29,13 @@ var handler = function (req, res) {
         var queryObject = url.parse(req.url,true).query;
         res.end("you said: "+queryObject["text"]);
     }
+    else
+    {
+        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.end("not found");
+    }
 };
 
-var server = http.createServer(handler);
+const server = http.createServer(handler);
 server.listen(1337, '127.0.0.1');
 console.log('Server running at http://127.0.0.1:1337/');

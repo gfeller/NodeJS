@@ -1,7 +1,11 @@
-module.exports = function(start, end) {
+module.exports = function(start, end, writer) {
+    writer = writer || console.log;
+    start = start || 0;
+    end = end || 10;
+
     var count = start;
     function solution1b() {
-        console.log(count);
+        writer(count);
         count = count + 1;
         if (count > end) { return; }
         solution1b();

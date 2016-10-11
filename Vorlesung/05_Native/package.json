@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sleep": "^3.0.1"
+    "sleep": "4.0.0"
   }
 }
