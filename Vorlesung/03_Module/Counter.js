@@ -1,4 +1,4 @@
-var counter = 0;
+let counter = 0;
 function add(){ return ++counter; }
 function get(){ return counter; }
 

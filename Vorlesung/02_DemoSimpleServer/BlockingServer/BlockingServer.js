@@ -1,19 +1,19 @@
 const http = require('http');
-var url = require('url');
-
+const url = require('url');
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = 3001;
 
-
-var handler = (req, res) => {
+const handler = function(req, res) {
     res.end("hello world");
-    var x = 1;
+    let x = 1;
     while(true) {
         console.log(x++);
     }
-
 };
-const server = http.createServer(handler);
+
+const server = http.createServer();
+server.on("request", handler);
+
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
