@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 
 function publicFile(filename, text, callback) {
     fs.writeFile(filename, text, function(err) {
@@ -13,7 +13,7 @@ function publicFile(filename, text, callback) {
             });
         });
     });
-};
+}
 
 
 function privateHandleError(err, callback) {

@@ -1,5 +1,5 @@
 function publicNumbers(start, end) {
-    var count = start;
+    let count = start;
     function solution1b() {
         console.log(count);
         count = count + 1;
@@ -7,7 +7,6 @@ function publicNumbers(start, end) {
         solution1b();
     }
     solution1b();
-};
-
+}
 
 module.exports = { numbers : publicNumbers};

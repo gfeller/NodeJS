@@ -1,4 +1,4 @@
-var a = require("./a");
-var b = require("./b");
+const a = require("./a");
+const b = require("./b");
 a.showObject();
-b.showObject()
+b.showObject();

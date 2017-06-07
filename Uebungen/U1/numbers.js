@@ -3,7 +3,7 @@ module.exports = function(start, end, writer) {
     start = start || 0;
     end = end || 10;
 
-    var count = start;
+    let count = start;
     function solution1b() {
         writer(count);
         count = count + 1;
