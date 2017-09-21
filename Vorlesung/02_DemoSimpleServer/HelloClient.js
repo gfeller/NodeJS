@@ -1,6 +1,6 @@
-var http = require("http");
+const http = require("http");
 //1337, '127.0.0.1'
-var req = http.request( {hostname: "localhost", port: 3000, path : "/test?text=Hello", method: "GET"}, function(res){
+const req = http.request( {hostname: "localhost", port: 3000, path : "/test?text=Hello", method: "GET"}, function(res){
     console.log('STATUS: ' + res.statusCode);
     console.log('HEADERS: ' + JSON.stringify(res.headers));
     res.setEncoding('utf8');
