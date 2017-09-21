@@ -6,14 +6,14 @@ const port = 3000;
 
 const server = http.createServer((request, response) => {
     console.log(request.url);
-    if (request.url == "/") {
+    if (request.url === "/") {
         fs.readFile("./index.html", function (err, cont) {
             response.writeHead(200, {'Content-Type': 'text/html'});
             response.end(cont);
         });
     }
     else{
-        var assetUrl = "./assets"+request.url;
+        let assetUrl = "./assets"+request.url;
         fs.exists(assetUrl, function(exists) {
                 if (exists) {
                     fs.readFile(assetUrl,  function (err, cont) {

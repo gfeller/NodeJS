@@ -1,24 +1,24 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+const http = require('http');
+const fs = require('fs');
+const url = require('url');
 
-var words = [];
+const words = [];
 
-var handler = function (req, res) {
-    if(req.url == "/"){
+const handler = function (req, res) {
+    if(req.url === "/"){
         console.log("readFile");
         res.writeHead(200, {'Content-Type': 'text/html'});
-        var stream = fs.createReadStream("./ToSend.html" );
+        let stream = fs.createReadStream("./ToSend.html" );
         stream.pipe(res);
     }
-    else if(req.url == "/readFile"){
+    else if(req.url === "/readFile"){
         console.log("readFile");
         fs.readFile("./ToSend.html", function(err, cont){
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.end(cont);
         });
     }
-    else if(req.url == "/error"){
+    else if(req.url === "/error"){
         fs.readFile("./wronghtml.html", function(err, cont){
             if(err){
                res.writeHead(404, {'Content-Type': 'text/plain'});
@@ -28,14 +28,14 @@ var handler = function (req, res) {
             res.end(cont);
         });
     }
-    else if(req.url.indexOf( "/hello" ) == 0){
+    else if(req.url.indexOf( "/hello" ) === 0){
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        var queryObject = url.parse(req.url,true).query;
-        var text = queryObject["text"];
+        let queryObject = url.parse(req.url,true).query;
+        let text = queryObject["text"];
         words.push(text);
         res.end("you said: "+ text);
     }
-    else if(req.url== "/data"){
+    else if(req.url=== "/data"){
         res.writeHead(200, {'Content-Type': 'application/json'});
         res.end(JSON.stringify({data: words}));
     }
