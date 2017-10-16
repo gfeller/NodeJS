@@ -18,5 +18,9 @@ myFunc(10, 3).then(console.log);
 
 myFunc("a", "b")
     .then(console.log)
-    .catch(console.log);
+    .then(() => console.log("OK"))
+    .catch(console.log)
+    .then(() => console.log("Something went wrong"));
+
+
 console.log("ende");
