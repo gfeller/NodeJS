@@ -20,7 +20,7 @@ myFunc("a", "b")
     .then(console.log)
     .then(() => console.log("OK"))
     .catch(console.log)
-    .then(() => console.log("Something went wrong"));
+    .then(() => console.log("finally"));
 
 
 console.log("ende");
