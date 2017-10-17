@@ -48,12 +48,12 @@
     let path = "file.txt";
     if(await exists(path))
     {
-        await console.log(await send());
+        console.log(await send());
     }
     else {
         try{
             await write(path, "hallo");
-            await console.log(await send(await read(path)));
+            console.log(await send(await read(path)));
         }
         catch (e)
         {
