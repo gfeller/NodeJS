@@ -8,7 +8,7 @@ class Door extends EventEmitter
     ring(){
         setTimeout(() => {
             this.emit('open');
-        }, 100);
+        }, 1000);
     };
 }
 

@@ -3,6 +3,7 @@ let door =  require("./Door").createDoor();
 //let door =  require("./ES5_Door").createDoor();
 
 door.on("open", function(){
-    console.log("door is open");
+    console.log("...door is open");
 });
 door.ring();
+console.log("waiting...");
