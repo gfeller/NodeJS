@@ -1,4 +1,4 @@
-( async function () {
+(async function () {
     let text = "text";
 
     async function exists(path) {
@@ -39,26 +39,20 @@
     async function send(text) {
         return new Promise(function (resolve) {
             setTimeout(function () {
-                console.log(text);
-                resolve(true);
+                resolve(text);
             }, 1);
         });
     }
 
     let path = "file.txt";
-    if(await exists(path))
-    {
-        console.log(await send());
-    }
-    else {
-        try{
+    try {
+        if (!await exists(path)) {
             await write(path, "hallo");
-            console.log(await send(await read(path)));
         }
-        catch (e)
-        {
-            console.log("error");
-        }
+        console.log(await send(await read(path)));
 
+    }
+    catch (e) {
+        console.log("error");
     }
 }());

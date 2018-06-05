@@ -1,4 +1,4 @@
-var text = "text";
+let text = "text";
 
 function exists(path) {
     return new Promise(function (resolve) {
@@ -44,23 +44,13 @@ function send(text) {
     });
 }
 
-var path = "file.txt";
+let path = "file.txt";
 exists(path)
-    .then(
-        (ok)=> {
-            if (ok) {
-                read(path)
-                    .then(send)
-                    .then(console.log)
-            }
-            else {
-                write(path, "hallo")
-                    .then(
-                        ()=>read(path)
-                            .then(send)
-                            .then(console.log),
-                        ()=> console.log("error")
-                    )
-            }
+    .then((ok) => {
+        if (!ok) {
+            return write(path, "hallo");
         }
-    );
+    })
+    .then(() => read(path))
+    .then(console.log)
+    .catch(() => console.log("error"));
