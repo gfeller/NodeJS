@@ -1,4 +1,4 @@
-var sleep = require('sleep');
+const sleep = require('sleep');
 
 console.log("Hi");
 sleep.sleep(4);

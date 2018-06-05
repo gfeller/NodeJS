@@ -1,4 +1,4 @@
-function number(start, end, writer = console.log) {
+export function number(start, end, writer = console.log) {
     end = end || 10;
     let count = start || 0;
 
@@ -13,6 +13,3 @@ function number(start, end, writer = console.log) {
 
     solution1b();
 }
-
-module.exports = number;
-//Alternative: module.exports = { number : number};
