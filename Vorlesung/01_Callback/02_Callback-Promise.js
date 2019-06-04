@@ -15,11 +15,12 @@ function myFunc(a, b) {
 console.log("start");
 myFunc(2, 4).then(console.log);
 myFunc(10, 3).then(console.log);
+myFunc("A", "B").then(console.log, console.error);
 
 myFunc("a", "b")
     .then(console.log)
     .then(() => console.log("OK"))
-    .catch(console.log)
+    .catch((err) => console.log("ERROR", err))
     .then(() => console.log("finally"));
 
 
