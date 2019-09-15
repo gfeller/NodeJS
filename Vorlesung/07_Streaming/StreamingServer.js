@@ -6,7 +6,7 @@ const handler = function (req, res) {
     if(req.url === "/"){
         console.log("readFile");
         res.writeHead(200, {'Content-Type': 'video'});
-        let stream = fs.createReadStream("./Wildlife.wmv" );
+        let stream = fs.createReadStream(__dirname  + "/Wildlife.wmv" );
         stream.pipe(res);
     }
 };
