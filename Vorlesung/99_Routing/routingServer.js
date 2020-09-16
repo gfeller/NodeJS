@@ -1,6 +1,6 @@
 const http = require('http');
 const fs = require('fs');
-const url = require('url');
+const querystring = require('querystring');
 
 const words = [];
 
@@ -30,7 +30,8 @@ const handler = function (req, res) {
     }
     else if(req.url.indexOf( "/hello" ) === 0){
         res.writeHead(200, {'Content-Type': 'text/plain'});
-        let queryObject = url.parse(req.url,true).query;
+
+        let queryObject = querystring.parse(req.url.split("?")[1])
         let text = queryObject["text"];
         words.push(text);
         res.end("you said: "+ text);

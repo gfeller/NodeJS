@@ -1,15 +1,16 @@
 const http = require('http');
-const url = require('url');
-
+const querystring = require('querystring');
 
 const hostname = '127.0.0.1';
 const port = 3000;
 
-const handler = function(request, response) {
-    let queryObject = url.parse(request.url,true).query;
+const handler = function (request, response) {
+    let searchParams = new URL(request.url, `http://${request.headers.host}`).searchParams;
+    let params = querystring.parse(request.url.split("?")[1])
+
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/plain');
-    response.end(`Echo: ${queryObject["text"]}`);
+    response.end(`Echo: ${searchParams.get("text")} ${params.text}`);
 };
 
 const server = http.createServer();
