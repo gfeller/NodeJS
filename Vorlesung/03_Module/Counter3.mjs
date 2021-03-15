@@ -1,3 +1,4 @@
+// named export
 export class Counter {
     constructor(startValue = 0) {
         this.counter = startValue
@@ -12,6 +13,11 @@ export class Counter {
     }
 }
 
+// default export
 export default Counter;
+
+// named export
+export const createCounter = (...args) => new Counter(...args);
+
 
 
