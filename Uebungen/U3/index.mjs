@@ -6,7 +6,6 @@ import {number} from '../U1/numbers.mjs'
 import {readFile} from '../U2/file.mjs'
 
 const handler = function (req, res) {
-
     if(req.url === "/sendFile"){
         res.writeHead(200, {'Content-Type': 'text/html'});
         let stream = fs.createReadStream("./ToSend.html" );
