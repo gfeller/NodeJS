@@ -1,9 +1,9 @@
-const http = require('http');
-const fs = require('fs');
-const querystring = require('querystring');
+import http from 'http';
+import fs from 'fs';
+import querystring from 'querystring';
 
-const number = require('../U1/numbers.js');
-const file = require('../U2/file.js');
+import {number} from '../U1/numbers.mjs'
+import {readFile} from '../U2/file.mjs'
 
 const handler = function (req, res) {
 
@@ -20,7 +20,7 @@ const handler = function (req, res) {
         res.end();
     }
     else if(req.url === "/file"){
-        file.file("test.txt", "random text", function(err, content){
+        readFile("test.txt", "random text", function(err, content){
             res.end(err ? err :  content);
         })
     }

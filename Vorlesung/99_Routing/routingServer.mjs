@@ -1,6 +1,6 @@
-const http = require('http');
-const fs = require('fs');
-const querystring = require('querystring');
+import http from 'http';
+import fs from 'fs';
+import querystring from 'querystring';
 
 const words = [];
 

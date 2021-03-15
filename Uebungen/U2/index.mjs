@@ -1,6 +1,6 @@
-const fileHandler = require('./file.js');
+import {readFile} from './file.mjs';
 
-fileHandler.file("test.txt", 'Hello World!',
+readFile("test.txt", 'Hello World!',
     function(err, content) {
         if (err) console.log(err);
         console.log(content)

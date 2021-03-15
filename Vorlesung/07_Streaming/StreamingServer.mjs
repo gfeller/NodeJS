@@ -1,12 +1,13 @@
-const http = require('http');
-const fs = require('fs');
-const url = require('url');
+import http from 'http';
+import fs from 'fs';
+
 
 const handler = function (req, res) {
-    if(req.url === "/"){
+    if (req.url === "/") {
         console.log("readFile");
         res.writeHead(200, {'Content-Type': 'video'});
-        let stream = fs.createReadStream(__dirname  + "/Wildlife.wmv" );
+        const x = import.meta.url;
+        let stream = fs.createReadStream("./Wildlife.wmv");
         stream.pipe(res);
     }
 };
