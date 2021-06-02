@@ -9,12 +9,13 @@ console.log(counterA.count());
 console.log("-----------------------");
 
 // Module is only loaded once
-import counterB from './counter.mjs';
+// named export
+import {get, add as count} from './counter.mjs';
 
-console.log(counterB.get());
-console.log(counterB.count());
-console.log(counterB.count());
-console.log(counterB.count());
+console.log(get());
+console.log(count());
+console.log(count());
+console.log(count());
 
 
 // Module is only loaded once
