@@ -15,7 +15,8 @@
 
 
     console.log("start");
-    console.log(await myFunc(2, 4));
+    const result = await myFunc(2, 4);
+    console.log(result);
     try
     {
         console.log(await myFunc("a", "b"));
