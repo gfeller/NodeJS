@@ -5,7 +5,8 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const handler = function (request, response) {
-    let searchParams = new URL(request.url, `http://${request.headers.host}`).searchParams;
+    const url = new URL(request.url, `http://${request.headers.host}`);
+    let searchParams = url.searchParams;
     let params = querystring.parse(request.url.split("?")[1])
 
     response.statusCode = 200;
