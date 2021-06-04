@@ -44,6 +44,7 @@ function send(text) {
     });
 }
 
+// --------------------------------------------
 let path = "file.txt";
 exists(path)
     .then((ok) => {
