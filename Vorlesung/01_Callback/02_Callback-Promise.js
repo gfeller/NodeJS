@@ -1,28 +1,30 @@
-function myFunc(a, b) {
-    return new Promise(function (resolve, reject) {
-        if( typeof a !== 'number' )
-        {
-            reject("NaN")
-        }
-        else {
-            setTimeout(function () {
-                    resolve(a + b);
-            }, 2000);
-        }
-    });
-}
+console.log("START");
+loadFile("hello-world.pdf").then(console.log, console.log);
+loadFile("hello-world.docx").then(console.log, console.log);
 
-console.log("start");
-myFunc(2, 4).then(console.log);
-myFunc(10, 3).then(console.log);
-myFunc("A", "B").then(console.log, console.error);
 
-/*
-myFunc("a", "b")
+loadFile("hello-world.docx")
     .then(console.log)
     .then(() => console.log("OK"))
     .catch((err) => console.log("ERROR", err))
-    .then(() => console.log("finally"));
-*/
+    .then(() => console.log("FINALLY"));
 
-console.log("ende");
+console.log("ENDE");
+
+
+
+
+
+function loadFile(file) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            if (file == null || !file.endsWith(".pdf")) {
+                reject({message: "File not found"});
+            } else {
+                resolve({message: "file found", content: "Hello World"});
+
+            }
+
+        }, 2000);
+    });
+}

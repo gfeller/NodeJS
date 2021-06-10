@@ -19,8 +19,7 @@
             setTimeout(function () {
                 if (ok) {
                     resolve();
-                }
-                else {
+                } else {
                     reject()
                 }
             }, 1);
@@ -44,6 +43,7 @@
         });
     }
 
+    // --------------------------------------------
     let path = "file.txt";
     try {
         if (!await exists(path)) {
@@ -51,8 +51,7 @@
         }
         console.log(await send(await read(path)));
 
-    }
-    catch (e) {
+    } catch (e) {
         console.log("error");
     }
 }());

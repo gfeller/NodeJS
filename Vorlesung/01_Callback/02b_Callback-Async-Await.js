@@ -1,29 +1,32 @@
 ( async function () {
-    async function myFunc(a, b) {
-        return new Promise(function (resolve, reject) {
-            if( typeof a !== 'number' )
-            {
-                reject("NaN")
-            }
-            else {
-                setTimeout(function () {
-                        resolve(a + b);
-                }, 2000);
-            }
-        });
-    }
-
-
-    console.log("start");
-    const result = await myFunc(2, 4);
-    console.log(result);
+    console.log("START");
+    const result = await loadFile("hello-world.pdf");
+    console.log(result.message);
     try
     {
-        console.log(await myFunc("a", "b"));
+        const result = await loadFile("hello-world.docx")
+        console.log(result);
     }
     catch(e)
     {
-        console.log(e);
+        console.log("ERROR", e.message);
     }
-    console.log("ende");
+    console.log("ENDE");
+
+
+
+
+    async function loadFile(file) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                if (file == null || !file.endsWith(".pdf")) {
+                    reject({message: "File not found"});
+                } else {
+                    resolve({message: "file found", content: "Hello World"});
+
+                }
+
+            }, 2000);
+        });
+    }
 }());

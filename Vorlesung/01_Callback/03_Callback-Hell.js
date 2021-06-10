@@ -31,6 +31,8 @@ function send(text, fn) {
     }, 1)
 }
 
+// --------------------------------------------
+
 var path = "file.txt";
 //Idee: Überprüfen ob File vorhanden ist, falls ja => zurückgeben ansonsten anlegen danach den Inhalt zurücksenden
 exists(path, (exists) =>
