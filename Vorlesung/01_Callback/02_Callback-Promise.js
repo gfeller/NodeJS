@@ -21,10 +21,8 @@ function loadFile(file) {
             if (file == null || !file.endsWith(".pdf")) {
                 reject({message: `File ${file} not found`});
             } else {
-                resolve({message: `File ${file} not found`, content: "Hello World"});
-
+                resolve({message: `File ${file} found`, content: "Hello World"});
             }
-
         }, 2000);
     });
 }
