@@ -20,9 +20,9 @@
         return new Promise(function (resolve, reject) {
             setTimeout(function () {
                 if (file == null || !file.endsWith(".pdf")) {
-                    reject({message: "File not found"});
+                    reject({message: `File ${file} not found`});
                 } else {
-                    resolve({message: "file found", content: "Hello World"});
+                    resolve({message: `File ${file} found`, content: "Hello World"});
 
                 }
 
@@ -30,3 +30,4 @@
         });
     }
 }());
+// console.log("END-FILE")
