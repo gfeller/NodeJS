@@ -1,6 +1,6 @@
 console.log("START");
-loadFile("hello-world.pdf").then(console.log, console.log);
-loadFile("hello-world.docx").then(console.log, console.log);
+loadFile("hello-world.pdf").then(console.log, console.error);
+loadFile("hello-world.docx").then(console.log, console.error);
 
 /*
 loadFile("hello-world.docx")
