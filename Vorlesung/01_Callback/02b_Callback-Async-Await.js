@@ -1,4 +1,4 @@
-( async function () {
+( async function loadFileDemo() {
     console.log("START");
     try
     {
@@ -12,7 +12,9 @@
     {
         console.log("ERROR", e.message);
     }
-    console.log("ENDE");
+    finally {
+        console.log("ENDE");
+    }
 
 
 
