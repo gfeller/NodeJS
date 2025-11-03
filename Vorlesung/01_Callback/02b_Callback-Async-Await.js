@@ -1,11 +1,12 @@
 ( async function () {
     console.log("START");
-    const result = await loadFile("hello-world.pdf");
-    console.log(result.message);
     try
     {
-        const result = await loadFile("hello-world.docx")
-        console.log(result);
+        const result = await loadFile("hello-world.pdf");
+        console.log(result.message);
+
+        const result1 = await loadFile("hello-world.docx")
+        console.log(result1);
     }
     catch(e)
     {
